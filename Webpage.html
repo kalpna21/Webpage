@@ -11,6 +11,13 @@ body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
 
+<style> 
+      #map { 
+        height: 400px; 
+        width: 100%; 
+       } 
+</style>
+
 <body>
 
 <!-- Navbar -->
@@ -110,6 +117,24 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="locate">
     <h2 class="w3-wide w3-center">Locate Us</h2>
     <div class="w3-row w3-padding-32">
+	   <div id="map"></div> 
+		<script> 
+      function initMap() { 
+        var test= {lat: 28.501859, lng: 77.410320}; 
+        var map = new google.maps.Map(document.getElementById('map'), { 
+          zoom: 4, 
+          center: test 
+        }); 
+        var marker = new google.maps.Marker({ 
+          position: test, 
+          map: map 
+        }); 
+      } 
+    </script> 
+    <script async defer 
+    src= 
+		"https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&callback=initMap"> 
+    </script> 
 
       </div>
     </div>
