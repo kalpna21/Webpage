@@ -28,6 +28,7 @@ body {font-family: "Lato", sans-serif}
     <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT US</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
 	<a href="#locate" class="w3-bar-item w3-button w3-padding-large w3-hide-small">LOCATE US</a>
+	<a href="#reviews" class="w3-bar-item w3-button w3-padding-large w3-hide-small">REVIEWS</a>
   </div>
 </div>
 
@@ -81,7 +82,7 @@ body {font-family: "Lato", sans-serif}
       </div>
       <div class="w3-third">
         <p>italian</p>
-        <img src="italian.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        <img src="italian.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
       </div>
     </div>
   </div>
@@ -113,6 +114,29 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   
+  <!-- Automatic Slideshow Reviews -->
+  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="reviews">
+  <h2 class="w3-wide w3-center">Customer Reviews</h2>
+  <div class="reviewsSlides w3-display-container w3-center w3-padding-64"> 
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+      <h3>Rahul - <i>Student</i></h3> 
+	  <p class="w3-opacity w3-center"><i>"Food is delicious and authentic."</i></p>
+    </div>
+  </div>
+  <div class="reviewsSlides w3-display-container w3-center w3-padding-64">
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+      <h3>Neha - <i>Software Engineer</i></h3> 
+	  <p class="w3-opacity w3-center"><i>"Ambience and Staff is really good. Suitable for office lunch."</i></p>   
+    </div>
+  </div>
+  <div class="reviewsSlides w3-display-container w3-center w3-padding-64">
+    <div class="w3-display-topmiddle w3-container w3-text-black w3-padding-32 w3-hide-small">
+      <h3>Mohit - <i>Businessman</i></h3> 
+	  <p class="w3-opacity w3-center"><i>"Very old customer of this Restaurant. Never felt disappointed with their service."</i></p>  
+    </div>
+  </div>
+   </div>
+  
   <!-- Locate Us -->
   <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="locate">
     <h2 class="w3-wide w3-center">Locate Us</h2>
@@ -141,7 +165,7 @@ body {font-family: "Lato", sans-serif}
   </div>
   
 <!-- End Page Content -->
-</div>
+
 
 
 <!-- Footer -->
@@ -162,14 +186,18 @@ carousel();
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
+  var y = document.getElementsByClassName("reviewsSlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none"; 
+    y[i].style.display = "none"; 	
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
+  y[myIndex-1].style.display = "block";  
   setTimeout(carousel, 4000);    
 }
+
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
